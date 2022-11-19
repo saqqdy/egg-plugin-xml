@@ -46,7 +46,9 @@ egg-plugin-xml support all configurations in [xml2js](https://github.com/Leonida
 ```js
 // {app_root}/config/config.default.js
 exports.xmlParser = {
-    explicitArray: false
+    xmlOptions: {
+        explicitArray: false
+    }
 }
 ```
 

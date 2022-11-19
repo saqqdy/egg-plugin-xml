@@ -34,12 +34,12 @@ module.exports = options => {
 	console.log(200, options)
 	if (typeof options !== 'object') options = {}
 	let mountKey = options.key || 'xml'
-	return async function xmlParser(ctx, next) {
+	return function xmlParser(ctx, next) {
 		if (ctx.request[mountKey] !== undefined) {
 			console.warn(
-				`ctx.request.${mountKey} is not undefined, please use ctx.request.xmlData to get the XML data`
+				`ctx.request.${mountKey} is not undefined, please use ctx.request.xmlBody to get the XML data`
 			)
-			mountKey = 'xmlData'
+			mountKey = 'xmlBody'
 		}
 		console.log(201, ctx.request.charset, ctx.request.rawBody, 202)
 		// method is post/put/patch && type is xml (text/xml and application/xml)
@@ -50,22 +50,21 @@ module.exports = options => {
 			// if (!options.encoding && ctx.request.charset) {
 			// 	options.encoding = ctx.request.charset
 			// }
-			// return parse(ctx.req, options)
-			// 	.then(result => {
-			// 		ctx.request[mountKey] = result.jsonData
-			// 		ctx.request.rawBody = result.rawBody
-			// 		return next()
-			// 	})
-			// 	.catch(err => {
-			// 		if (options.onerror) {
-			// 			options.onerror(err, ctx)
-			// 		}
-			// 		// throw error by default
-			// 		else {
-			// 			throw err
-			// 		}
-			// 	})
-			return next()
+			return parse(ctx.req, options)
+				.then(result => {
+					ctx.request[mountKey] = result.jsonData
+					ctx.request.rawBody = result.rawBody
+                    return next()
+				})
+				.catch(err => {
+					if (options.onerror) {
+						options.onerror(err, ctx)
+					}
+					// throw error by default
+					else {
+						throw err
+					}
+				})
 		}
 		return next()
 	}
