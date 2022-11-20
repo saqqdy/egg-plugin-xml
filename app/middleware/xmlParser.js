@@ -1,71 +1,30 @@
-const { parseStringPromise } = require('xml2js')
-
-function parse(request, options) {
-	options = Object.assign(
-		{
-			limit: '1mb',
-			encoding: 'utf8',
-			xmlOptions: {}
-		},
-		options
-	)
-	const len = request.headers['content-length']
-	if (len) {
-		options.length = len
-	}
-	return raw(request, options).then(str => {
-		return parseStringPromise(str, options.xmlOptions)
-			.then(xml => {
-				return {
-					xml,
-					rawBody: str
-				}
-			})
-			.catch(err => {
-				err = typeof err === 'string' ? new Error(err) : err
-				err.status = 400
-				err.body = str
-				throw err
-			})
-	})
-}
+const getProperty = require('js-cool/lib/getProperty')
+// const setProperty = require('js-cool/lib/setProperty')
 
 module.exports = options => {
-	console.log(200, options)
 	if (typeof options !== 'object') options = {}
-	let mountKey = options.key || 'xml'
-	return function xmlParser(ctx, next) {
-		if (ctx.request[mountKey] !== undefined) {
-			console.warn(
-				`ctx.request.${mountKey} is not undefined, please use ctx.request.xmlBody to get the XML data`
-			)
-			mountKey = 'xmlBody'
+	// like body or query.xml
+	const propertyName = options.key || 'body'
+	return async function xmlParser(ctx, next) {
+		const { helper } = ctx
+		if (getProperty(ctx.request, propertyName) !== undefined) {
+			console.error(`[Error] ctx.request.${propertyName} is not undefined`)
+			return await next()
 		}
-		console.log(201, ctx.request.charset, ctx.request.rawBody, 202)
 		// method is post/put/patch && type is xml (text/xml and application/xml)
 		if (
 			ctx.is('text/xml', 'xml') &&
 			['post', 'put', 'patch'].includes(ctx.method.toLowerCase())
 		) {
-			// if (!options.encoding && ctx.request.charset) {
-			// 	options.encoding = ctx.request.charset
-			// }
-			return parse(ctx.req, options)
-				.then(result => {
-					ctx.request[mountKey] = result.jsonData
-					ctx.request.rawBody = result.rawBody
-                    return next()
-				})
-				.catch(err => {
-					if (options.onerror) {
-						options.onerror(err, ctx)
-					}
-					// throw error by default
-					else {
-						throw err
-					}
-				})
+			if (!options.encoding && ctx.request.charset) {
+				options.encoding = ctx.request.charset
+			}
+			const { xml, rawBody } = await helper.getXMLBody(ctx.req, options)
+			ctx.request[propertyName] = xml
+			// setProperty(ctx.request, propertyName, xml)
+			ctx.request.rawBody = rawBody
+			return await next()
 		}
-		return next()
+		return await next()
 	}
 }

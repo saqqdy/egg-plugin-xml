@@ -5,5 +5,8 @@
  * @property {String} SOME_KEY - some description
  */
 exports.xmlParser = {
-    xmlOptions: {}
+	encoding: 'utf8',
+	limit: '2mb',
+	key: 'body',
+	xmlOptions: {}
 }

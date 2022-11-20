@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"packageManager": "pnpm@7.14.2",
 	"eggPlugin": {
-		"name": "xml"
+		"name": "xmlParser"
 	},
 	"files": [
 		"app",
@@ -21,6 +21,11 @@
 		"autod": "autod",
 		"eslint": "eslint --fix --ext .ts,.js ./",
 		"prettier": "prettier --write \"**/*.{js,ts,json,md}\""
+	},
+	"dependencies": {
+		"js-cool": "^2.5.0",
+		"raw-body": "^2.5.1",
+		"xml2js": "^0.4.23"
 	},
 	"devDependencies": {
 		"@eslint-sets/eslint-config-simple": "^3.0.5",
@@ -40,7 +45,10 @@
 	},
 	"peerDependencies": {
 		"egg": ">= 2",
-		"egg-bin": ">= 4"
+		"egg-bin": ">= 4",
+		"js-cool": ">= 2",
+		"raw-body": "^2.0.0",
+		"xml2js": ">= 0.4"
 	},
 	"keywords": [
 		"eggjs",
@@ -87,8 +95,5 @@
 	"bugs": {
 		"url": "https://github.com/saqqdy/egg-plugin-xml/issues"
 	},
-	"homepage": "https://github.com/saqqdy/egg-plugin-xml#readme",
-	"dependencies": {
-		"raw-body": "^2.5.1"
-	}
+	"homepage": "https://github.com/saqqdy/egg-plugin-xml#readme"
 }
