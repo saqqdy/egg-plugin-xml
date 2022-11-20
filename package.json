@@ -31,7 +31,6 @@
 		"@eslint-sets/eslint-config-simple": "^3.0.5",
 		"autod": "^3.1.2",
 		"autod-egg": "^1.1.0",
-		"babel-eslint": "^10.1.0",
 		"egg": "^3.5.0",
 		"egg-bin": "^5.4.1",
 		"egg-ci": "^2.2.0",

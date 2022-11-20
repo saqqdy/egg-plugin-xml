@@ -5,9 +5,9 @@ module.exports = {
 	/**
 	 * parse xml
 	 *
-	 * @param rawBody {Object} xml string
-	 * @param options {Object} xml2js options
-	 * @return result {Promise<object>} { xml, rawBody }
+	 * @param {Object} rawBody xml string
+	 * @param {Object} options xml2js options
+	 * @return {Promise<object>} result { xml, rawBody }
 	 */
 	async parseXML(rawBody, options) {
 		return await parseStringPromise(rawBody, options)
@@ -26,9 +26,9 @@ module.exports = {
 	/**
 	 * parse xml
 	 *
-	 * @param request {Object} ctx.req
-	 * @param options {Object} xmlParse options
-	 * @return result {Promise<object>} { xml, rawBody }
+	 * @param {Object}  request ctx.req
+	 * @param {Object}  options xmlParse options
+	 * @return {Promise<object>} result { xml, rawBody }
 	 */
 	async getXMLBody(request, options) {
 		options = Object.assign(
