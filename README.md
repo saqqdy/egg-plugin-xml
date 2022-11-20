@@ -67,7 +67,7 @@ helper.getXMLBody()
 
 ## Change logs
 
-[更新日志](./CHANGELOG.md)
+[Change logs](./CHANGELOG.md)
 
 ## Questions & Suggestions
 
