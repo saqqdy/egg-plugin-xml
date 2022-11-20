@@ -2,7 +2,7 @@
 
 # egg-plugin-xml
 
-An eggjs plugin for parsing xml, base on [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js).
+An eggjs plugin for parsing xml
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
@@ -46,11 +46,28 @@ egg-plugin-xml support all configurations in [xml2js](https://github.com/Leonida
 ```js
 // {app_root}/config/config.default.js
 exports.xmlParser = {
+    limit: '2mb',
+    encoding: 'utf8',
+    key: 'body',
     xmlOptions: {
         explicitArray: false
     }
 }
 ```
+
+## Extends
+
+```js
+// {app_root}/app/extend/helper.js
+const { helper } = ctx
+
+helper.parserXML()
+helper.getXMLBody()
+```
+
+## Change logs
+
+[更新日志](./CHANGELOG.md)
 
 ## Questions & Suggestions
 
