@@ -1,7 +1,7 @@
 {
 	"name": "egg-plugin-xml",
 	"description": "An eggjs plugin for parsing xml",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"packageManager": "pnpm@7.14.2",
 	"eggPlugin": {
 		"name": "xmlParser"
