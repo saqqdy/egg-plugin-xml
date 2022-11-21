@@ -16,6 +16,7 @@ An eggjs plugin for parsing xml
 
 ## Install
 
+
 ```bash
 # use pnpm
 $ pnpm install egg-plugin-xml
@@ -54,6 +55,17 @@ exports.xmlParser = {
     }
 }
 ```
+
+## Extends
+
+```js
+// {app_root}/app/extend/helper.js
+const { helper } = ctx
+
+helper.parserXML()
+helper.getXMLBody()
+```
+
 
 ## Change logs
 
