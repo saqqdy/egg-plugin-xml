@@ -1,5 +1,9 @@
-# 更新日志
+# Change logs
 
-## 2022.11.21 v1.0.0 更新日志
+## 2022.11.21 v1.1.0
 
-1. 发布`1.0.0`版本
+1. The outputs no longer contains xml attributes 
+
+## 2022.11.21 v1.0.0
+
+1. release `v1.0.0`

@@ -11,7 +11,7 @@ module.exports = {
 	 */
 	async parseXML(rawBody, options) {
 		return await parseStringPromise(rawBody, options)
-			.then(xml => ({
+			.then(({ xml = {} }) => ({
 				xml,
 				rawBody
 			}))
