@@ -12,11 +12,11 @@ if (version.includes('beta')) command += ' --tag beta'
 if (version.includes('alpha')) command += ' --tag alpha'
 
 if (tagType && !version.includes(tagType)) {
-    console.warn(`version ${version} is not a ${tagType} version`)
-    process.exit(0)
+	console.warn(`version ${version} is not a ${tagType} version`)
+	process.exit(0)
 }
 
 execSync(command, {
-    stdio: 'inherit'
+	stdio: 'inherit'
 })
 console.info('Published egg-plugin-xml')

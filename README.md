@@ -16,13 +16,9 @@ An eggjs plugin for parsing xml
 
 ## Install
 
-
 ```bash
 # use pnpm
 $ pnpm install egg-plugin-xml
-
-# use npm
-$ npm install egg-plugin-xml --save
 
 # use yarn
 $ yarn add egg-plugin-xml
@@ -33,8 +29,8 @@ $ yarn add egg-plugin-xml
 ```js
 // {app_root}/config/plugin.js
 exports.xmlParser = {
-    enable: true,
-    package: 'egg-plugin-xml'
+  enable: true,
+  package: 'egg-plugin-xml'
 }
 ```
 
@@ -47,12 +43,21 @@ egg-plugin-xml support all configurations in [xml2js](https://github.com/Leonida
 ```js
 // {app_root}/config/config.default.js
 exports.xmlParser = {
-    limit: '2mb',
-    encoding: 'utf8',
-    key: 'body',
-    xmlOptions: {
-        explicitArray: false
-    }
+  limit: '2mb',
+  encoding: 'utf8',
+  key: 'body',
+  xmlOptions: {
+    explicitArray: false
+  }
+}
+```
+
+### eg. Convert camel to underscore delimited
+
+```js
+// {app_root}/config/config.default.js
+exports.xmlParser = {
+  normalizeTags: true // or: normalizeTags: '-'
 }
 ```
 
@@ -65,7 +70,6 @@ const { helper } = ctx
 helper.parserXML()
 helper.getXMLBody()
 ```
-
 
 ## Change logs
 

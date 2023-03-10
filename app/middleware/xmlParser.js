@@ -19,6 +19,18 @@ module.exports = options => {
 			if (!options.encoding && ctx.request.charset) {
 				options.encoding = ctx.request.charset
 			}
+			// normalize tags
+			if (options.normalizeTags) {
+				const sep = typeof options.normalizeTags === 'string' ? options.normalizeTags : '_'
+				if (!options.xmlOptions) options.xmlOptions = {}
+				options.xmlOptions.tagNameProcessors = [
+					name =>
+						name
+							.replace(/([A-Z]+)/g, sep + '$1')
+							.replace(new RegExp('^' + sep), '')
+							.toLocaleLowerCase()
+				]
+			}
 			const { xml, rawBody } = await helper.getXMLBody(ctx.req, options)
 			ctx.request[propertyName] = xml
 			// setProperty(ctx.request, propertyName, xml)
