@@ -1,5 +1,10 @@
 # Change logs
 
+## 2023.05.08 v1.2.1
+
+1. fix import js-cool
+2. upgrade packages
+
 ## 2022.11.21 v1.2.0
 
 1. Supports passing in normalizeTags, which can be boolean values or strings. `Boolean`: convert camel to underscore delimited, `String`: convert the camel to a string separated by the passed string

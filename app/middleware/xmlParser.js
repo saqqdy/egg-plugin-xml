@@ -1,5 +1,4 @@
-const getProperty = require('js-cool/lib/getProperty')
-// const setProperty = require('js-cool/lib/setProperty')
+const { getProperty } = require('js-cool')
 
 module.exports = options => {
 	if (typeof options !== 'object') options = {}

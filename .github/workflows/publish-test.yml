@@ -18,6 +18,8 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
+        with:
+          version: 8.4.0
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -37,14 +39,14 @@ jobs:
       # - run: git config --global user.email "saqqdy@qq.com"
       # - run: git config --global user.name "saqqdy"
 
-      # - run: pnpm run dist
+      # - run: pnpm dist
       #   env:
-      #       NODE_OPTIONS: --max-old-space-size=6144
+      #     NODE_OPTIONS: --max-old-space-size=6144
 
       - name: Gen .npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ./.npmrc
 
-      - run: pnpm pub --alpha
+      - run: pnpm pub --test
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
