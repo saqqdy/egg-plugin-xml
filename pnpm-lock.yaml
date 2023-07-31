@@ -5,8 +5,8 @@ overrides:
 
 dependencies:
   js-cool:
-    specifier: ^3.1.0
-    version: 3.1.0(core-js@3.30.2)
+    specifier: ^5.3.1
+    version: 5.3.1
   raw-body:
     specifier: ^2.5.2
     version: 2.5.2
@@ -41,7 +41,7 @@ devDependencies:
     version: 12.1.0(eslint@8.35.0)
   load-yml:
     specifier: ^1.3.0
-    version: 1.3.0(core-js@3.30.2)
+    version: 1.3.0(core-js@3.29.0)
   npm-run-all:
     specifier: ^4.1.5
     version: 4.1.5
@@ -53,7 +53,7 @@ devDependencies:
     version: 1.4.0
   reinstaller:
     specifier: ^2.3.0
-    version: 2.3.0(debug@4.3.4)(js-cool@3.1.0)
+    version: 2.3.0(debug@4.3.4)(js-cool@5.3.1)
   tsnd:
     specifier: ^1.1.0
     version: 1.1.0
@@ -87,7 +87,7 @@ packages:
       lodash: 4.17.21
       pkg-up: 3.1.0
       reflect-metadata: 0.1.13
-      tslib: 2.5.0
+      tslib: 2.6.1
       type-fest: 3.6.1
       yargs-parser: 21.1.1
     dev: true
@@ -96,7 +96,7 @@ packages:
     resolution: {integrity: sha512-7xlYTRpD39HyAPMJ+NgIan8TsgvScuOWkAZP3pbmg2vzIi4QdEqpXoLRf86GwG3IUiUFQ2XIiCEcUz7Vb3Qejg==}
     dependencies:
       inquirer: 8.2.5
-      tslib: 2.5.0
+      tslib: 2.6.1
       yargs-parser: 21.1.1
     dev: true
 
@@ -104,13 +104,13 @@ packages:
     resolution: {integrity: sha512-bSO9tL1pkphcSi9Vxi0Fk0OtK5uIjiqrgQhq0cQpx16Bfv9RBSt313KZywDUZl+4yNeT/lU+uVajyhQKJNRU5A==}
     dependencies:
       command-line-usage: 6.1.3
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: true
 
   /@artus-cli/plugin-version@1.0.2:
     resolution: {integrity: sha512-gD/nJAoYdF6XAho0fcMlbwiekmAsunwqq4R7BHKaq3f+qOWVFHqoAFWa05evxx+TUQHd3+18RrwxqJN6LydVhg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: true
 
   /@artus/core@1.0.7(reflect-metadata@0.1.13):
@@ -132,7 +132,7 @@ packages:
   /@artus/pipeline@0.2.2:
     resolution: {integrity: sha512-TGiBBEnwfh4vdVoRxgcrAbEeppSxzX6l4UxEpIIUsr2eMYIJisAwRlx9F3gEtX706O9oJAbpv4eQUNkHQSnMyQ==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: true
 
   /@babel/code-frame@7.18.6:
@@ -583,6 +583,10 @@ packages:
     dependencies:
       eslint-scope: 5.1.1
     dev: true
+
+  /@node-kit/extra.cp@3.1.1:
+    resolution: {integrity: sha512-YyOp/OPHRW/Uv0TyJWXoHI3O/s8pAgX4IIizYvQi4oJjPNt95RvuIbBZ4q2YcSYOtHpLn1eoTJ3q7+wBmV0U+A==}
+    hasBin: true
 
   /@node-kit/extra.fs@2.3.0:
     resolution: {integrity: sha512-zRhA+C0udCSTuKNpzrLxH4mD/MsW1/K4218jI6fl1jr5p/AN0LX/LCK73nz8AsKmXsgamg5YOuheBABpcY8s7w==}
@@ -1215,7 +1219,7 @@ packages:
     resolution: {integrity: sha512-x1FCFnFifvYDDzTaLII71vG5uvDwgtmDTEVWAxrgeiR8VjMONcCXJx7E+USjDtHlwFmt9MysbqgF9b9Vjr6w+w==}
     engines: {node: '>=4'}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: true
 
   /autod-egg@1.1.0:
@@ -2510,10 +2514,6 @@ packages:
     requiresBuild: true
     dev: true
 
-  /core-js@3.30.2:
-    resolution: {integrity: sha512-uBJiDmwqsbJCWHAwjrx3cvjbMXP7xD72Dmsn5LOJpiRmE3WbBbN5rCqQ2Qh6Ek6/eOrjlWngEynBWo4VxerQhg==}
-    requiresBuild: true
-
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
@@ -3103,7 +3103,7 @@ packages:
       json5: 2.2.3
       mkdirp: 0.5.5
       ts-node: 7.0.1
-      tslib: 2.5.0
+      tslib: 2.6.1
       typescript: 4.5.4
       yn: 3.1.1
     transitivePeerDependencies:
@@ -4720,6 +4720,10 @@ packages:
       loose-envify: 1.4.0
     dev: true
 
+  /invert-kv@3.0.1:
+    resolution: {integrity: sha512-CYdFeFexxhv/Bcny+Q0BfOV+ltRlJcd4BBZBYFX/O0u4npJrgZtIcjokegtiSMAvlMTJ+Koq0GBCc//3bueQxw==}
+    engines: {node: '>=8'}
+
   /ip@1.1.5:
     resolution: {integrity: sha512-rBtCAQAJm8A110nbwn6YdveUnuZH3WrC36IwkRXxDnq53JvXA2NVQvB7IHyKomxK1MJ4VDNw3UtFDdXQ+AvLYA==}
     dev: true
@@ -4984,14 +4988,18 @@ packages:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
     dev: true
 
-  /js-cool@3.1.0(core-js@3.30.2):
-    resolution: {integrity: sha512-we1SJhRlwMmkAXnhYrXZ3FgnEIjbtEUNEIim4vV7COb5N43PdSqraPBm57nXPqrQfXPZtRwarTC/ZZGkrnxjLw==}
+  /js-cool@5.3.1:
+    resolution: {integrity: sha512-GEngziByE55FZBuR6bcEl+RjR4Y/JlTw5SVSOwXLb9tr4Zbzp3Z9OLtDTa8Wdfe4a3EKJzcNTYE7E2Bm5VstxQ==}
     engines: {node: '>=12.20'}
-    peerDependencies:
-      core-js: '>= 3'
     dependencies:
-      core-js: 3.30.2
-      tslib: 2.5.0
+      load-source: 1.2.0
+      mount-css: 1.2.0
+      mount-image: 1.2.0
+      mount-script: 1.2.0
+      mount-style: 1.2.0
+      os-lang: 3.1.1
+      tslib: 2.6.1
+      use-downloads: 1.4.0
 
   /js-sdsl@4.1.5:
     resolution: {integrity: sha512-08bOAKweV2NUC1wqTtf3qZlnpOX/R2DU9ikpjOHs0H+ibQv3zpncVQg6um4uYtRtrwIX8M4Nh3ytK4HGlYAq7Q==}
@@ -5264,6 +5272,12 @@ packages:
       language-subtag-registry: 0.3.21
     dev: true
 
+  /lcid@4.0.1:
+    resolution: {integrity: sha512-qI4sQt7g19ZWtaodPKBUvym/pen9/lZzqyl2qeItTFPwJptXllVhe3KI+mV9xmBa4cnZoik8m1obToxqFbVIZQ==}
+    engines: {node: '>=14.16'}
+    dependencies:
+      invert-kv: 3.0.1
+
   /levn@0.3.0:
     resolution: {integrity: sha512-0OO4y2iOHix2W6ujICbKIaEQXvFQHue65vUG3pb5EUomzPI90z9hsA1VsO/dbIIpC53J8gxM9Q4Oho0jrCM/yA==}
     engines: {node: '>= 0.8.0'}
@@ -5294,6 +5308,14 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
+  /load-source@1.2.0:
+    resolution: {integrity: sha512-2pgerVx7egVvqEm2TfYr3GOSX7tbmAEs6Kt3gDRODnexC2xfLOB/hB9wP8+MFBlo2tD/GLX1MgQ1IOZ4jbtzaw==}
+    dependencies:
+      mount-css: 1.2.0
+      mount-image: 1.2.0
+      mount-script: 1.2.0
+      mount-style: 1.2.0
+
   /load-yml@1.3.0(core-js@3.29.0):
     resolution: {integrity: sha512-LkbCmVZULVsMADpXe3WIvM8GfsTDDbbnItNaEJIhoJeyab359GyQ5dM4esqyE+XH60Yo8xB5N2SeEk174RY6Rg==}
     engines: {node: '>=12.20'}
@@ -5305,20 +5327,6 @@ packages:
     dependencies:
       '@types/js-yaml': 4.0.5
       core-js: 3.29.0
-      js-yaml: 4.1.0
-    dev: true
-
-  /load-yml@1.3.0(core-js@3.30.2):
-    resolution: {integrity: sha512-LkbCmVZULVsMADpXe3WIvM8GfsTDDbbnItNaEJIhoJeyab359GyQ5dM4esqyE+XH60Yo8xB5N2SeEk174RY6Rg==}
-    engines: {node: '>=12.20'}
-    peerDependencies:
-      core-js: '>= 3'
-    peerDependenciesMeta:
-      core-js:
-        optional: true
-    dependencies:
-      '@types/js-yaml': 4.0.5
-      core-js: 3.30.2
       js-yaml: 4.1.0
     dev: true
 
@@ -5623,6 +5631,18 @@ packages:
     dependencies:
       workspace-root: 2.3.0
     dev: true
+
+  /mount-css@1.2.0:
+    resolution: {integrity: sha512-LGm7ucjo+3NsXQqxHH03v9jmAs00/JR1CsqO6IC9gm7zkZjWjki5FLM+Ld9MeTfuPPXXgMj7m1yzz5NA13Ye1g==}
+
+  /mount-image@1.2.0:
+    resolution: {integrity: sha512-NQsmg+Zjnb4DZNvJtwuFbN3ekS+tJxyfbYuTk9PqdmtRpHv0RjajEnzCRXNUIZ7Epbe3iTHhRFJI/zHClmirQA==}
+
+  /mount-script@1.2.0:
+    resolution: {integrity: sha512-Zi41a5RITaRU0Uzkgih/yzUfsxWDFLjM8ap37Jjic1jH2ob7N5yOzsj6zhSJxc3JC84456kgLFd5SLdYob2eJQ==}
+
+  /mount-style@1.2.0:
+    resolution: {integrity: sha512-INP8yaVjMy6kl2fbM43UrGWxqCZIKMO35pNW9nL0EiS7jNYbZkXghf7Nt+ls2VyqOZlEONo6h4WtnxNS41By6A==}
 
   /ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -5943,6 +5963,13 @@ packages:
     resolution: {integrity: sha512-B5JU3cabzk8c67mRRd3ECmROafjYMXbuzlwtqdM8IbS8ktlTix8aFGb2bAGKrSRIlnfKwovGUUr72JUPyOb6kQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /os-lang@3.1.1:
+    resolution: {integrity: sha512-+1Ij2yQHWVbMwbXVrG7Y6rs3t/IZmOPO9m1vNNy/nX0DbuXm+ZVusLQLy8mf953pXVbAXO4KynuisuH0crHfCA==}
+    hasBin: true
+    dependencies:
+      '@node-kit/extra.cp': 3.1.1
+      lcid: 4.0.1
 
   /os-name@1.0.3:
     resolution: {integrity: sha512-f5estLO2KN8vgtTRaILIgEGBoBrMnZ3JQ7W9TMZCnOIGwHe8TRGSpcagnWDo+Dfhd/z08k9Xe75hvciJJ8Qaew==}
@@ -6421,7 +6448,7 @@ packages:
       jsesc: 0.5.0
     dev: true
 
-  /reinstaller@2.3.0(debug@4.3.4)(js-cool@3.1.0):
+  /reinstaller@2.3.0(debug@4.3.4)(js-cool@5.3.1):
     resolution: {integrity: sha512-h6SPTPixsMctVDY3wMbmoFo9SB8fC9UsxVknZqSUWz9mcm95TdV/ck9kwypKfW731SfYyCVcquQVIQkOR1aXkg==}
     hasBin: true
     peerDependencies:
@@ -6435,7 +6462,7 @@ packages:
       cosmiconfig: 8.1.0
       debug: 4.3.4(supports-color@8.1.1)
       global-modules: 2.0.0
-      js-cool: 3.1.0(core-js@3.30.2)
+      js-cool: 5.3.1
       monorepo-root: 2.3.0
       ora: 6.1.2
       what-pm: 2.3.0(core-js@3.29.0)
@@ -6545,7 +6572,7 @@ packages:
   /rxjs@7.8.0:
     resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.6.1
     dev: true
 
   /safe-buffer@5.1.2:
@@ -7106,8 +7133,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tslib@2.5.0:
-    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+  /tslib@2.6.1:
+    resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
 
   /tsnd@1.1.0:
     resolution: {integrity: sha512-sc+Xm5uxwfMlYCjLkwP9i7+9uC4izAo8N/opmdzR+RHtE/XTEfUV8r5FI3oh6RdcMybNHD0DTGultnzrJfcirQ==}
@@ -7304,6 +7331,9 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /use-downloads@1.4.0:
+    resolution: {integrity: sha512-h2t2c7cKx7YCQcM7Am68EW5Wh24fjR6astbTCj3HA4ZYlsjPdybBfSS1ZP7Bw+taFAhMFCL+7zfVJMeTNrWlcQ==}
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
